@@ -8,20 +8,20 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(str) {
   const results = {};
-  const upperCaseStr = str.toUpperCase()
+  const upperCaseStr = str.toUpperCase();
 
   for (const letter of upperCaseStr) {
     if (letter !== ' ') {
-      if(results[letter]) {
+      if (results[letter]) {
         results[letter] += 1;
       } else {
         results[letter] = 1;
-      }    
+      }
     }
   }
 
   return results;
-}
+};
 
 
 // Test code
