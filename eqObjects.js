@@ -28,35 +28,36 @@ const eqObjects = function(object1, object2) {
   }
 
   for (const key in object1) {
-    // Check if the corresponding object keys are both arrays
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      // if they are indeed both arrays, run eqArrays. eqArrays will return true if they are equal.
-      if (!eqArrays(object1[key], object2[key])) {
-        return false;
-      }
+      console.log('called for eqArrays')
+      if (!eqArrays(object1[key], object2[key])) return false;
+    } else if (typeof object1[key] === 'object' && typeof object2[key] === 'object') {
+      console.log('called recursive')
+      if (!eqObjects(object1[key], object2[key])) return false;
     } else {
-      // We know at this point they must be primitive data type, or there could be a case where one is primitive and one is an array, in which case the check below will return false (array !== num/str/boolean)
-      if (object1[key] !== object2[key]) {
-        return false;
-      }
+      if (object1[key] !== object2[key]) return false;
     }
   }
-
   return true;
 };
 
 
 // Test Code
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// const abc = { a: "1", b: "2", c: "3" };
 
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
+// assertEqual(eqObjects(ab, ba), true);
+// assertEqual(eqObjects(ab, abc), false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true);
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true);
 
-const cd2 = { c: "1", d: 2 };
-assertEqual(eqObjects(cd, cd2), false);
+// const cd2 = { c: "1", d: 2 };
+// assertEqual(eqObjects(cd, cd2), false);
+
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
+console.log(eqObjects({ a: { z: 1, x: { i: [6, 7] } }, b: 2 }, { a: { z: 1, x: { i: [6, 7] } }, b: 2 })); // => true
