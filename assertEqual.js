@@ -1,4 +1,4 @@
-/* This solution odoes not work for arrays */
+/** This function is for strict equal only and does not work for onj or arrays */
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -8,6 +8,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+module.exports = assertEqual;
