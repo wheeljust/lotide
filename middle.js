@@ -1,22 +1,8 @@
-const passedMsg = '✅ Assertion Passed';
-const failedMsg = '❌ Assertion Failed';
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(arr1, arr2) {
-  let result = eqArrays(arr1, arr2) ? passedMsg : failedMsg;
-  console.log(result);
-};
+/** Middle returns the element(s) in the middle of an array
+ * For arrays with an even number length, middle will return 2 numbers
+ * For arrays with an odd number length, middle will return 1 number
+ * For arrays with 2 or fewer elements, there is no middle, so function returns empty array []
+ */
 
 const middle = function(arr) {
   const length = arr.length;
@@ -31,18 +17,12 @@ const middle = function(arr) {
     middleIndex = length / 2;
     middleArr.push(arr[middleIndex - 1]);
     middleArr.push(arr[middleIndex]);
-  } else {
-    middleIndex = Math.floor(length / 2);
-    middleArr.push(arr[middleIndex]);
-  }
-
+    return middleArr;
+  } 
+  
+  middleIndex = Math.floor(length / 2);
+  middleArr.push(arr[middleIndex]);
   return middleArr;
 };
 
-
-// Test Code
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+module.exports = middle;
