@@ -1,12 +1,8 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+/** Tail returns a new array that excludes the first element
+ *
+ * Used a C style for loop because we want to skip over the first element
+ */
 
-// Use a C style for loop because we want to skip over the first element
 const tail = function(arr) {
   const newArr = [];
   for (let i = 1; i < arr.length; i++) {
@@ -15,10 +11,4 @@ const tail = function(arr) {
   return newArr;
 };
 
-
-//TEST CODE
-const testArr = [1,2,3,4];
-const result = tail(testArr).toString();
-assertEqual(result, '2,3,4');
-assertEqual(testArr.toString(), '1,2,3,4');
-assertEqual(testArr.length, 4);
+module.exports = tail;
