@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// Function returns an object indicating the number of times each letter appears in the string argument
 
 const countLetters = function(str) {
   const results = {};
@@ -12,21 +6,11 @@ const countLetters = function(str) {
 
   for (const letter of upperCaseStr) {
     if (letter !== ' ') {
-      if (results[letter]) {
-        results[letter] += 1;
-      } else {
-        results[letter] = 1;
-      }
+      results[letter] ? results[letter] += 1 : results[letter] = 1;
     }
   }
 
   return results;
 };
 
-
-// Test code
-const countedLetters = countLetters('How Are You World');
-assertEqual(countedLetters['H'], 1);
-assertEqual(countedLetters['O'], 3);
-assertEqual(countedLetters['W'], 2);
-assertEqual(countedLetters['R'], 2);
+module.exports = countLetters;

@@ -1,4 +1,4 @@
-/** This function is for strict equal only and does not work for onj or arrays */
+/** This function is for strict equal only and does not work for obj or arrays */
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
