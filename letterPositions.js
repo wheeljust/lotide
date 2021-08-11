@@ -1,22 +1,4 @@
-const passedMsg = '✅ Assertion Passed';
-const failedMsg = '❌ Assertion Failed';
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(arr1, arr2) {
-  let result = eqArrays(arr1, arr2) ? passedMsg : failedMsg;
-  console.log(result);
-};
+/** Returns an object with arrays of all of the index positions for each character in a given string */
 
 const letterPositions = function(str) {
   const results = {};
@@ -35,9 +17,4 @@ const letterPositions = function(str) {
   return results;
 };
 
-
-// Test code
-assertArraysEqual(letterPositions('hello').H, [0]);
-assertArraysEqual(letterPositions('hello').E, [1]);
-assertArraysEqual(letterPositions('hello').L, [2, 3]);
-assertArraysEqual(letterPositions('hello').O, [4]);
+module.exports = letterPositions;
