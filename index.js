@@ -12,11 +12,16 @@ const letterPositions = require('./letterPositions');
 const countOnly = require('./countOnly');
 const findKey = require('./findKey');
 const findKeyByValue = require('./findKeyByValue');
-
+const assertEqual = require('./assertEqual');
+const assertArraysEqual = require('./assertArraysEqual');
+const assertObjectsEqual = require('./assertObjectsEqual');
 
 module.exports = {
-  eqObjects: eqObjects,
+  assertEqual: assertEqual,
+  assertArraysEqual: assertArraysEqual,
+  assertObjectsEqual: assertObjectsEqual,
   eqArrays: eqArrays,
+  eqObjects: eqObjects,
   head: head,
   tail: tail,
   middle: middle,
