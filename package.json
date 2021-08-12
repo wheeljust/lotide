@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@wheeljust/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lotide is a mini clone of the lodash library, specifically created as a student project for my learning at lighthouse labs",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/wheeljust/lotide.git"
   },
-  "author": "",
+  "author": "Justin Wheeler <justinwwheeler@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wheeljust/lotide/issues"
