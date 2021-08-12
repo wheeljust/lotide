@@ -9,7 +9,7 @@ describe('#findKeyByValue tests', () =>  {
       comedy: "Brooklyn Nine-Nine",
       drama:  "The Wire"
     }, 'The Wire');
-    const expected = 'drama'
+    const expected = 'drama';
     
     assert.strictEqual(actual, expected);
   });
@@ -20,7 +20,7 @@ describe('#findKeyByValue tests', () =>  {
       comedy: "Brooklyn Nine-Nine",
       drama:  "The Wire"
     }, 'Brooklyn Nine-Nine');
-    const expected = 'comedy'
+    const expected = 'comedy';
     
     assert.strictEqual(actual, expected);
   });
@@ -31,7 +31,7 @@ describe('#findKeyByValue tests', () =>  {
       comedy: "Brooklyn Nine-Nine",
       drama:  "The Wire"
     }, 'The Office');
-    const expected = undefined
+    const expected = undefined;
     
     assert.strictEqual(actual, expected);
   });

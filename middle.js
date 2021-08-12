@@ -18,7 +18,7 @@ const middle = function(arr) {
     middleArr.push(arr[middleIndex - 1]);
     middleArr.push(arr[middleIndex]);
     return middleArr;
-  } 
+  }
   
   middleIndex = Math.floor(length / 2);
   middleArr.push(arr[middleIndex]);

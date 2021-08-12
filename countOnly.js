@@ -1,4 +1,4 @@
-/** 
+/**
  * Funtion returns an object, the object contains the count of each specified parameter in the items to Count argument passed to the function.
  * allItems: an array of strings that we need to look through
  * itemsToCount: an object specifying what to count

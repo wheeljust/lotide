@@ -12,7 +12,7 @@ describe('#findKey tests', () =>  {
       "Ora":       { stars: 2 },
       "Akelarre":  { stars: 3 }
     }, x => x.stars === 2);
-    const expected = 'noma'
+    const expected = 'noma';
     
     assert.strictEqual(actual, expected);
   });

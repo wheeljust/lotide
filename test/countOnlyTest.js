@@ -20,11 +20,11 @@ describe('#countOnly tests', () =>  {
       "Joe"
     ];
 
-    assert.deepEqual(countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false }), 
-    {
-      Jason: 1,
-      Fang: 2
-    }
+    assert.deepEqual(countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false }),
+      {
+        Jason: 1,
+        Fang: 2
+      }
     );
 
   });
